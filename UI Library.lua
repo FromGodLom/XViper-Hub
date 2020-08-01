@@ -3,13 +3,13 @@ local Settings = {
 	Rainbow = false
 }
 for _, gui in pairs(game:GetService("CoreGui").RobloxGui:GetChildren()) do
-    if gui:IsA("ScreenGui") and string.match(gui.Name, "_BACONLIB") then
+    if gui:IsA("ScreenGui") and string.match(gui.Name, "_NameString") then
         gui:Destroy()
     end
 end
 
 for _, gui in pairs(game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"):GetChildren()) do
-    if gui:IsA("ScreenGui") and string.match(gui.Name, "_BACONLIB") then
+    if gui:IsA("ScreenGui") and string.match(gui.Name, "_NameString") then
         gui:Destroy()
     end
 end
@@ -22,7 +22,7 @@ local ItemsExtender = Instance.new("Frame")
 local Frame = Instance.new("Frame")
 local UIListLayout = Instance.new("UIListLayout")
 
-ScreenGui.Name = "..."
+ScreenGui.Name = tostring(math.random(1,99)..math.random(1,99)..math.random(1,99)..math.random(1,99)..math.random(1,99)..math.random(1,99).."_NameString")
 ScreenGui.Parent = game.CoreGui or game.Players.LocalPlayer:WaitForChild("PlayerGui")
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
